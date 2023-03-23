@@ -1,6 +1,9 @@
 package com.codecool.SellWorkshops.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,9 +12,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import java.util.Collection;
 import java.util.List;
 
@@ -28,11 +30,11 @@ public class User implements UserDetails {
     @NotNull(message = "Name cannot be null")
     @Size(min = 3, max = 20, message = "Username must be minimum 3 and maximum 20 characters")
     private String username;
-    @Email(message = "Email not valid")
+    //@Email(message = "Email not valid")
     private String email;
-    @Size(min = 8, max = 30, message = "Password must be minimum 8 characters")
+    //@Size(min = 8, max = 30, message = "Password must be minimum 8 characters")
     private String password;
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     private Role role;
 
     public User(String username, String email, String password, Role role) {
