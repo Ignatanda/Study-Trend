@@ -3,6 +3,7 @@ package com.codecool.SellWorkshops.endpoint;
 import com.codecool.SellWorkshops.entity.User;
 import com.codecool.SellWorkshops.security.dto.RegisterRequest;
 import com.codecool.SellWorkshops.service.security_service.AuthenticationService;
+import jakarta.validation.Valid;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class AuthenticationEndpoint {
     }
 
     @PostMapping("/register")
-    public User register(@RequestBody RegisterRequest request) {
+    public User register(@Valid @RequestBody RegisterRequest request) {
         return authenticationService.register(request);
     }
 
