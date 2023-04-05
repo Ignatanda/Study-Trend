@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import './modalRegistration.scss';
 import Aos from 'aos';
 import 'aos/dist/aos.css' 
+import { URL_REGISTRATION } from "../../Data/constants";
 
 
 const ModalRegistration = ({open, setOpen}) => {
@@ -51,7 +52,7 @@ const ModalRegistration = ({open, setOpen}) => {
 
     const registerUser = (requestOptions) => {
         fetch(
-            'http://localhost:8080/authentication/register',
+            URL_REGISTRATION,
             requestOptions
         ).then((response) => {
             if (!response.ok) {

@@ -8,6 +8,7 @@ import {TbGridDots} from 'react-icons/tb'
 import {FiShoppingCart} from 'react-icons/fi'
 import ModalLogin from '../ModalLogin/ModalLogin';
 import ModalRegistration from '../ModalRegistration/ModalRegistration';
+import { signOut } from '../../Logic/authentication';
 
 
  const Navbar = () => {
@@ -31,10 +32,6 @@ import ModalRegistration from '../ModalRegistration/ModalRegistration';
 
     function closeNav() {
         setActive('navBar');
-    }
-    
-    function handleSignOut(){
-       localStorage.clear();
     }
 
     function hadleUserPageClick() {
@@ -63,7 +60,7 @@ import ModalRegistration from '../ModalRegistration/ModalRegistration';
                                 <button className='btn' onClick={() => hadleUserPageClick()}>  Hello, {user}</button>
                         </li>
                             <li className='navItem'>
-                                    <a className="navLink" onClick={() => handleSignOut()} href="/">Logout</a>
+                                    <a className="navLink" onClick={() => signOut()} href="/">Logout</a>
                             </li>
                             <li className='navItem' >
                                 <button className='btn'>  <FiShoppingCart className='icon'/> <a href="#"> Buy now</a></button>

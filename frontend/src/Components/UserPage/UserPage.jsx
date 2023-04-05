@@ -1,21 +1,23 @@
-import React from 'react';
-import {useNavigate} from 'react-router-dom';
-
-
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    function handleHomeButton() {
-        navigate ("/");
-    }
+  function handleHomeButton() {
+    navigate("/");
+  }
 
-    return (
-        <div className='container-userpage'>
-            <br></br><br></br>
-        <button className='btn' onClick={() => handleHomeButton()}> Back to main</button>
-        </div>
-    )
-}
+  return (
+    <div className='container-userpage'>
+      <br></br>
+      <br></br>
+      <button className='btn' onClick={() => handleHomeButton()}>
+        {" "}
+        Back to main
+      </button>
+    </div>
+  );
+};
 
-export default UserPage
+export default UserPage;
